@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+  {% if page == "login" %}
+  <div>
+    <form method="post">
+      {% csrf_token %}
+
+      <label>Username: </label>
+      <input type='text' name="username" placeholder="Enter Username" />
+      <label>Password: </label>
+      <input type='password' name="password" placeholder="Enter Password" />
+
+      <input type='submit' value="Login" />
+    </form>
+    <p>Don't have a study buddy yet? <a href="{% url 'base:register' %}">Signup</a> here</p>
+  </div>
+
+  {% else %}
+
+  <div>
+    <form method="post">
+      {% csrf_token %}
+
+      {{ form.as_p}}
+
+      <input type='submit' value="Register" />
+    </form>
+    <p>I have a StudyBud account. <a href="{% url 'base:login' %}">Login</a></p>
+  </div>
+
+{% endif %}
+
+{% endblock content %}

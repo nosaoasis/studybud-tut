@@ -1,0 +1,19 @@
+
+<h3><a href="{% url 'base:home' %}">Logo StudyBud</a></h3>
+
+<form method="GET" aaction="{% url 'base:home' %}">
+  <input type="text" name="q" placeholder="Search StudyBud" />
+</form>
+
+
+{% if request.user.is_authenticated %}
+  <p>Hello {{ request.user }}</p>
+  <a href="{% url 'base:logout' %}">Logout</a>
+{% else %}
+  <a href="{% url 'base:login' %}">Login</a>
+{% endif %}
+
+<hr />
+
+{% block content %}
+{% endblock content %}

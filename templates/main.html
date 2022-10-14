@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <title>My Study Pal {{ title }}</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  {% if messages %}
+    <ul class="flash_messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% block content%}
+  {% endblock content%}
+
+</body>
+
+</html>

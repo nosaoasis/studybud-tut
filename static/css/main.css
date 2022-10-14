@@ -1,0 +1,22 @@
+.home-container {
+  display: grid;
+  grid-template-columns : 1fr 3fr;
+}
+
+.room-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr
+}
+
+
+.comments {
+  border-bottom: 1px solid green;
+  padding-bottom: 0.2rem
+}
+
+.commen-area {
+  max-height: 4rem;
+  max-width: 40rem;
+  border-radius: 0.5rem;
+  padding: 10px; 
+}
